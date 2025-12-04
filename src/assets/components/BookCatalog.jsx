@@ -40,7 +40,7 @@ const BookCatalog = () => {
  
   const fetchCartTotal = async () => {
     try {
-      const response = await axios.get(`{API_URL}/api/cart`);
+      const response = await axios.get(`${API_URL}/api/cart`);
       if (response.data.success) {
         setCartTotal(response.data.cart.totalItems);
       }
