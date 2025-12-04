@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductAdmin.css';
+import { API_URL } from '../config';
+
 
 const ProductAdmin = () => {
   const [products, setProducts] = useState([]);
@@ -48,7 +50,7 @@ const ProductAdmin = () => {
       if (filtersObj.status !== 'all') params.append('status', filtersObj.status);
 
       const response = await fetch(
-        `http://localhost:3000/api/admin/products?${params.toString()}`,
+        `{API_URL}/api/admin/products?${params.toString()}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -164,8 +166,8 @@ const ProductAdmin = () => {
     try {
       const token = localStorage.getItem('adminToken');
       const url = editingProduct
-        ? `http://localhost:3000/api/admin/products/${editingProduct.id}`
-        : 'http://localhost:3000/api/admin/products';
+        ? `{API_URL}/api/admin/products/${editingProduct.id}`
+        : `{API_URL}/api/admin/products`;
 
       const productData = {
         ...formData,
@@ -212,7 +214,7 @@ const ProductAdmin = () => {
     try {
       const token = localStorage.getItem('adminToken');
       const response = await fetch(
-        `http://localhost:3000/api/admin/products/${productId}?permanent=true`,
+        `{API_URL}/api/admin/products/${productId}?permanent=true`,
         {
           method: 'DELETE',
           headers: { Authorization: `Bearer ${token}` },
@@ -236,7 +238,7 @@ const ProductAdmin = () => {
     try {
       const token = localStorage.getItem('adminToken');
       const response = await fetch(
-        `http://localhost:3000/api/admin/products/${productId}`,
+        `{API_URL}/api/admin/products/${productId}`,
         {
           method: 'PUT',
           headers: {

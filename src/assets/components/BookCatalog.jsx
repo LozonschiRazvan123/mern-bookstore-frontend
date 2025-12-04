@@ -1,3 +1,5 @@
+import { API_URL } from '../config';
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import SearchFilterSort from './SearchFilterSort';
@@ -21,7 +23,7 @@ const BookCatalog = () => {
   const fetchProducts = async () => {
     try {
       const response = await
-      axios.get('http://localhost:3000/api/products');
+      axios.get(`{API_URL}/api/products`);
       console.log('Răspuns API:', response);
       console.log('Date răspuns:', response.data);
       if (response.data.success) {
@@ -38,7 +40,7 @@ const BookCatalog = () => {
  
   const fetchCartTotal = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/cart');
+      const response = await axios.get(`{API_URL}/api/cart`);
       if (response.data.success) {
         setCartTotal(response.data.cart.totalItems);
       }
@@ -49,7 +51,7 @@ const BookCatalog = () => {
  
   const addToCart = async (productId) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/cart', {
+      const response = await axios.post(`{API_URL}/api/cart`, {
         productId,
         quantity: 1,
       });
@@ -78,11 +80,11 @@ const BookCatalog = () => {
         const isRecent = (Date.now() - parseInt(timestamp, 10)) < 300000;
         if (isRecent) {
           try {
-            const response = await fetch(`http://localhost:3000/api/check-payment-status/${sessionId}`);
+            const response = await fetch(`{API_URL}/api/check-payment-status/${sessionId}`);
             if (response.ok) {
               const data = await response.json();
               if (data.paymentStatus === 'paid') {
-                await fetch('http://localhost:3000/api/clear-cart', { method: 'POST' });
+                await fetch(`{API_URL}/api/clear-cart`, { method: 'POST' });
                 fetchCartTotal();
                 localStorage.removeItem('lastCheckoutSession');
                 localStorage.removeItem('checkoutTimestamp');
