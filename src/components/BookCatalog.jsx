@@ -84,7 +84,7 @@ const BookCatalog = () => {
             if (response.ok) {
               const data = await response.json();
               if (data.paymentStatus === 'paid') {
-                await fetch(`{API_URL}/api/clear-cart`, { method: 'POST' });
+                await fetch(`${API_URL}/api/clear-cart`, { method: 'POST' });
                 fetchCartTotal();
                 localStorage.removeItem('lastCheckoutSession');
                 localStorage.removeItem('checkoutTimestamp');
