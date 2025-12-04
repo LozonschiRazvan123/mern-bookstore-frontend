@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import './PaymentSuccess.css';
-import { API_URL } from '/config';
+import { API_URL } from '../config';
 
 const PaymentSuccess = () => {
   const [searchParams] = useSearchParams();
