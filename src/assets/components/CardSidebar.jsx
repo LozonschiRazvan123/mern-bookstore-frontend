@@ -20,7 +20,7 @@ const CardSidebar = ({ isOpen, onClose }) => {
  
   const fetchCart = async () => {
     try {
-      const response = await axios.get('{API_URL}/api/cart');
+      const response = await axios.get(`{API_URL}/api/cart`);
       if (response.data.success) {
         setCart(response.data.cart);
       }

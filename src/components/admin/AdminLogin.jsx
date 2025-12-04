@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminLogin.css';
-import { API_URL } from '../config';
+import { API_URL } from '../../config';
 
 const AdminLogin = () => {
   const [formData, setFormData] = useState({

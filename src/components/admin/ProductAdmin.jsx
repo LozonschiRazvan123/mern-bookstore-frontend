@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProductAdmin.css';
-import { API_URL } from '../config';
+import { API_URL } from '../../config';
 
 
 const ProductAdmin = () => {
