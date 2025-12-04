@@ -23,7 +23,7 @@ const BookCatalog = () => {
   const fetchProducts = async () => {
     try {
       const response = await
-      axios.get(`{API_URL}/api/products`);
+      axios.get(`${API_URL}/api/products`);
       console.log('Răspuns API:', response);
       console.log('Date răspuns:', response.data);
       if (response.data.success) {
@@ -40,7 +40,7 @@ const BookCatalog = () => {
  
   const fetchCartTotal = async () => {
     try {
-      const response = await axios.get(`{API_URL}/api/cart`);
+      const response = await axios.get(`${API_URL}/api/cart`);
       if (response.data.success) {
         setCartTotal(response.data.cart.totalItems);
       }
@@ -51,7 +51,7 @@ const BookCatalog = () => {
  
   const addToCart = async (productId) => {
     try {
-      const response = await axios.post(`{API_URL}/api/cart`, {
+      const response = await axios.post(`${API_URL}/api/cart`, {
         productId,
         quantity: 1,
       });
@@ -80,7 +80,7 @@ const BookCatalog = () => {
         const isRecent = (Date.now() - parseInt(timestamp, 10)) < 300000;
         if (isRecent) {
           try {
-            const response = await fetch(`{API_URL}/api/check-payment-status/${sessionId}`);
+            const response = await fetch(`${API_URL}/api/check-payment-status/${sessionId}`);
             if (response.ok) {
               const data = await response.json();
               if (data.paymentStatus === 'paid') {

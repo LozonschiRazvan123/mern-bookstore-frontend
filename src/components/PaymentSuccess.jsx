@@ -9,7 +9,7 @@ const PaymentSuccess = () => {
   useEffect(() => {
     const clearCart = async () => {
       try {
-        await fetch('{API_URL}/api/clear-cart', {
+        await fetch(`${API_URL}/api/clear-cart`, {
           method: 'POST',
         });
         console.log('Coș golit după plata reușită');
