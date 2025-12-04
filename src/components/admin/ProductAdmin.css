@@ -1,0 +1,322 @@
+.admin-products-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.admin-products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+}
+
+.admin-header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Butoane */
+.admin-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.admin-btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.admin-btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.admin-btn-edit {
+    background: #ffc107;
+    color: black;
+}
+
+.admin-btn-warning {
+    background: #dc3545;
+    color: white;
+}
+
+.admin-btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.admin-btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.admin-btn-primary:hover {
+    background: #0056b3;
+}
+
+.admin-btn-secondary:hover {
+    background: #545b62;
+}
+
+.admin-btn-edit:hover {
+    background: #e0a800;
+}
+
+.admin-btn-warning:hover {
+    background: #c82333;
+}
+
+.admin-btn-success:hover {
+    background: #218838;
+}
+
+.admin-btn-danger:hover {
+    background: #c82333;
+}
+
+/* Filtre */
+.admin-filters-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.admin-search-input,
+.admin-status-filter {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.admin-search-input {
+    flex: 1;
+    min-width: 200px;
+}
+
+.admin-search-input:focus {
+    outline: 2px solid #007bff;
+    border-color: #007bff;
+}
+
+/* Grid produse */
+.admin-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.admin-product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background: white;
+    position: relative;
+}
+
+.admin-product-inactive {
+    opacity: 0.6;
+    background: #f8f9fa;
+}
+
+.admin-product-image {
+    height: 200px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-product-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.admin-product-info {
+    margin-bottom: 1rem;
+}
+
+.admin-product-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.admin-product-author {
+    margin: 0 0 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Prețuri */
+.admin-product-pricing {
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.admin-product-price {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.admin-product-original-price {
+    color: #6c757d;
+    font-size: 0.9rem;
+    text-decoration: line-through;
+}
+
+.admin-product-discount-price {
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.admin-product-discount-badge {
+    background: #dc3545;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.admin-product-stock {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+}
+
+.admin-product-category {
+    color: #888;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Acțiuni produs */
+.admin-product-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.admin-product-actions .admin-btn {
+    flex: 1;
+    min-width: 60px;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.admin-featured-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #ffc107;
+    color: black;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Modal */
+.admin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.admin-modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Formular */
+.admin-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.admin-form-input,
+.admin-form-textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.admin-form-input {
+    flex: 1;
+}
+
+.admin-form-input-full {
+    width: 100%;
+}
+
+.admin-form-input:focus,
+.admin-form-textarea:focus {
+    outline: 2px solid #007bff;
+    border-color: #007bff;
+}
+
+.admin-form-textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.admin-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.admin-form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.admin-loading,
+.admin-no-products {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+}
